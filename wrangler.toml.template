@@ -1,0 +1,19 @@
+name = "uniswap-report-worker"
+type = "javascript"
+zone_id = ""
+account_id = "##替换##"
+route = ""
+workers_dev = true
+compatibility_date = "2022-02-10"
+kv_namespaces = [ 
+         { binding = "STORE", id = "使用 wrangler kv:namespace create "STORE" 创建 ####", preview_id = "wrangler kv:namespace create "STORE" --preview" }
+]
+[build]
+command = "npm install && npm run build"
+[build.upload]
+format = "service-worker"
+
+[vars]
+INFURA_RPC = "https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161"
+PUSHDEER_KEY = "##替换##"
+TOKEN_LIST = "[##替换##]"
